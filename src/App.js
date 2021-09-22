@@ -8,27 +8,29 @@ import NavBar from "./components/navbar";
 import Home from "./components/home";
 import About from "./components/about";
 import Admin from "./components/admin";
+import GlobalState from "./context/globalState";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <NavBar />
+    <GlobalState>
+      <BrowserRouter>
+        <div className="App">
+          <NavBar />
 
-        <div className="conatiner-fluid">
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/home" exact component={Home} />
-            <Route path="/catalog" exact component={Catalog} />
-            <Route path="/about" exact component={About} />
-            <Route path="/admin" exact component={Admin} />
-            <Catalog />
-          </Switch>
+          <div className="conatiner-fluid">
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/home" exact component={Home} />
+              <Route path="/catalog" exact component={Catalog} />
+              <Route path="/about" exact component={About} />
+              <Route path="/admin" exact component={Admin} />
+            </Switch>
+          </div>
+
+          <Footer />
         </div>
-
-        <Footer />
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </GlobalState>
   );
 }
 
