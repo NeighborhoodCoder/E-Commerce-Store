@@ -46,10 +46,13 @@ const NavBar = () => {
               </Link>
             </li>
           </ul>
-          <form className="d-flex text-light me-3">
+          <Link
+            to="/cart"
+            className="d-flex text-light me-3 btn btn-outline-dark"
+          >
             <span className="badge bg-primary me-1">{cart.length}</span>
             View Cart
-          </form>
+          </Link>
         </div>
       </div>
     </nav>
