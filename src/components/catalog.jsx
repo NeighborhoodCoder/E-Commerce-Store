@@ -2,6 +2,7 @@ import "./catalog.css";
 import Item from "./item";
 import { useEffect, useState } from "react";
 import ItemService from "../services/itemService";
+import axios from "axios";
 
 const Catalog = () => {
   // state variables
@@ -10,9 +11,9 @@ const Catalog = () => {
   let [categories, setCategories] = useState([]);
 
   // logic (fns)
-  const retrieveCatalog = () => {
+  const retrieveCatalog = async () => {
     let service = new ItemService();
-    let cat = service.getCatalog();
+    let cat = await service.getCatalog();
     setProducts(cat);
     setDisplayItems(cat);
     console.log(cat);
